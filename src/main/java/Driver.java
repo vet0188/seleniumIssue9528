@@ -8,27 +8,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 
-import java.util.stream.IntStream;
-
-
-public class Main {
-
-    public static void main(String[] args) throws InterruptedException {
-        IntStream.rangeClosed(0,50).boxed().forEach( i -> {
-            try {
-                System.out.println("=== Iteration [" + i + "] ===");
-                Driver.getInstance().get("https://google.com");
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            finally {
-                Driver.closeDriver();
-            }
-        });
-    }
-}
-
 class Driver {
     private static final String USER_NAME = "";
     private static final String PASSWORD = "";
